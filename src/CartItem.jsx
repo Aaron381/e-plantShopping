@@ -7,7 +7,6 @@ const CartItem = ({ onContinueShopping }) => {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-  // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
     var total = 0
     cart.forEach((element) => {
@@ -33,10 +32,9 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleRemove = (item) => {
-    dispatch(removeItem(item))
+    dispatch(removeItem(item));
   };
 
-  // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
         var cost = item.cost
         var quantity = item.quantity
